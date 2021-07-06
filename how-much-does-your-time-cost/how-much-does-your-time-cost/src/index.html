@@ -1,0 +1,131 @@
+<head>
+<title>
+    TruFinance: How Much Does Your Time Cost?
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<div id = nav-bar>
+  <nav>
+    <ul>
+      <li><a class = "nav-link" id = "advisor"> Advisor </a></li>
+      <li><a class = "nav-link" id = "calc"> Calculator </a></li>
+      <li><a class ="nav-link" id = "loan"> Loan </a></li>
+      <li><a class = "nav-link" id = "budget"> Budget </a></li>
+      <li><a class = "nav-link" id = "tracker"> Tracker </a></li>
+      <li><a class = "nav-link" id = "stocks"> Stocks </a></li>
+    </ul>
+  </nav>
+</div>
+<div id = "time-cost">
+  <header>
+    <h1> How Much Does Your Time Cost? </h1>
+  </header>
+  <p id = "description"> A calculator that displays time (days, hours, etc.) you have to work to afford a certain object based on your income data. </p>
+</div>
+
+<div id = "input-calc"></div>
+
+<div class = "square-1"></div>
+<p id = "number-1"> 1 </p>
+ <form id="q1">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "annual-gross"
+            id = "annual-gross"
+            min = "0"
+            placeholder = "Annual Gross Salary:"
+            required>
+     </input>
+</form>
+
+<div class = "square-2"></div>
+<p id = "number-2">2</p>
+ <form id="q2">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "top-fed-tax"
+            id = "top-marg-tax"
+            min = "0"
+            placeholder = "Top Marginal Federal Tax Rate: %"
+            required>
+     </input>
+</form>
+<br>
+
+<div class = "square-3"></div>
+<p id = "number-3">3</p>
+<form id="q3">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "tax-sum"
+            id = "top-local-sum"
+            min = "0"
+            placeholder = "Top Marginal State + Local Tax Rate: %"
+            required>
+     </input>
+</form>
+<br>
+
+<div class = "square-4"></div>
+<p id = "number-4">4</p>
+<form id="q4">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "hours-worked"
+            id = "total-hours-worked"
+            min = "0"
+            placeholder = "Total Hours Worked Per Year:"
+            required>
+     </input>
+</form>
+<br>
+
+<div class = "square-5"></div>
+<p id = "number-5">5</p>
+<form id="q5">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "hours-commuted"
+            id = "total-hours-commuted"
+            min = "0"
+            placeholder = "Total Hours Worked Per Year:"
+            required>
+     </input>
+</form>
+<br>
+
+<div class = "square-6"></div>
+<p id = "number-6">6</p>
+<form id="q6">
+   <div>
+      <br>
+     <input
+            type = "number"
+            name = "expenditure"
+            id = "total-cost"
+            min = "0"
+            placeholder = "Total Cost of Your Expenditure:"
+            required>
+     </input>
+</form>
+<br>
+
+<button type = "submit" id = "submit">Calculate</button>
