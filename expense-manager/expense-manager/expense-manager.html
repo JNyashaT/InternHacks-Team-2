@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<link href='https://fonts.googleapis.com/css?family=Share' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Planner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="expensestyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #nav-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+    border-right: solid;
+    background: #84C978;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .nav-link{
+    text-decoration:none;
+    font-family: Share Tech Mono;
+    font-size: 25px;
+    text-align: center;
+  }
+  #navbar li {
+    height: 60%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }
+
+  #navbar a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #navbar ul {
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .navbar a:hover {
+    color: #1c87c9;
+  }
+
+  #advisor{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 18px;
+  top: 112px;
+  font-family: Share Tech Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #calc{
+  position: fixed;
+  width: 150px;
+  height: 45px;
+  left: 0px;
+  top: 181px;
+  font-size: 23px;
+  line-height: 32px;
+  color: #000000;             
+  background: #155E09; 
+  opacity: 0.5;
+  }
+
+  #loan{
+  position: fixed;
+  width: 125px;
+  height: 27px;
+  left: 10px;
+  top: 250px;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #budget{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 317px;
+  font-size: 29px;
+  line-height: 33px;
+  color: #000000;
+  }
+
+  #expenses{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 394px;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #invest{
+  position: absolute;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 476px;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000; 
+  }
+  body{
+    position: fixed;
+    left:165px;
+  }
+</style>
+<div id = nav-bar>
+  <nav>
+    <ul>
+      <li><a class = "nav-link" id = "advisor" href ="../advisor-page/dist/advisor-page.html">Advisor</a></li>
+      <li><a class = "nav-link" id = "calc" href = "../cost-of-time/cost-of-time.html"> Cost of Time </a></li>
+      <li><a class ="nav-link" id = "loan"> Loan </a></li>
+      <li><a class = "nav-link" id = "budget" href = "../budget-tracker/budget-tracker.html">Budget</a></li>
+      <li><a class = "nav-link" id = "expenses" href ="expense-manager.html"> Expenses </a></li>
+      <li><a class = "nav-link" id = "invest" href = "../invest-feature/invest-calc.html"> Invest</a></li>
+    </ul>
+  </nav>
+</div>
+<title>Expenses</title>
+<body>
+<div class="row">
+    <div class="col-4 left-container">
+        <div class="month-container">
+            <div class="header fs-white">Overview of the Month</div>
+            <div id="current-month" class="sub-text fs-white"></div>
+            <div class="budget-container p-2 mt-4">
+                <span id="month-budget" class="month-amount">$ 0</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="expense-chart"></canvas>
+        </div>
+    </div>
+    <div class="col-8 right-container">
+        <div class="calc-container">
+            <div class="header fs-black">Track Your Expenses</div>
+            <div class="dropdown open">
+                <button class="btn btn-info dropdown-toggle"
+                        type="button" id="dropdownMenu3" 
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    Expense Type
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="type-savings">Savings</a>
+                    <a class="dropdown-item" id="type-expense">Expense</a>
+                    <a class="dropdown-item" id="type-investment">Investment</a>
+                </div>
+            </div>
+            <div class="mt-3 tracking-text text-capitalize sub-text bottom-border">Expenses:</div>
+
+            <div class="row mt-4">
+                <div class="col-7">
+                    <input class="form-control input-expense-description" type="text" placeholder="Description">
+                </div>
+                <div class="col-4">
+                    <input class="form-control input-expense-value" type="number" placeholder="Value">
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-success btn-submit-expense">&check;</button>
+                </div>
+            </div>
+            <div class="expense-list mt-4">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="expenseapp.js"></script>
+</body>
+</html>

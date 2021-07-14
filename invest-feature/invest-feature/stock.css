@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+html, body {
+  height: auto;
+  font-family: 'Oxygen';
+  font-size: 20px;
+}
+
+body{
+  background: rgb(239, 239, 239);
+  background: url('background.jpg');
+  background-size: fill;
+}
+
+hr {
+  width: 90%;
+}
+
+.container {
+  //background-color: rgba(0, 5, 58, 1);
+  background-color: #73b58a;
+  opacity: 0.9;
+  color: white;
+  margin: 5% auto;
+  width: 66%;
+  height: auto;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .5);
+  border-radius: 5px;
+}
+
+.header {
+  padding: 34px 34px 0px 34px;
+  margin-left: 15px;
+  font-size: 32px;
+}
+
+.indices {
+  padding: 34px;
+  margin-left: 15px;
+}
+
+.stock {
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.name, .price, .change {
+  flex: 1;
+}
+
+.lastUpdated {
+  margin-left: 15px;
+  padding: 34px 34px 10px 34px;
+  font-size: 18px;
+}
+
+.closeTime {
+  margin-left: 15px;
+  padding: 0px 34px 34px 34px;
+  font-size: 18px;
+}
+
+.searchbar {
+  width: 50%;
+  height: 30px;
+  padding-left: 16px;
+  margin: 5% 25% 0 25%;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+#search, #viewChart {
+  margin-left: 15px;
+  padding-left: 34px;
+  color: white;
+}
+
+#search:hover, #viewChart:hover {
+  color: rgb(148, 160, 181);
+}
+
+#stockChart {
+  margin-left: 15%;
+}
+
+
+
+@media (min-width: 48em) {
+    .container {
+        max-width: 46rem;
+    }
+}
+
+.subcontainer {
+    padding: 3rem 1.5rem;
+}
+
+.subcontainer h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+#headimg {
+    display: block;
+    max-width: 70%;
+    margin-bottom: 2em;
+}
+#results {
+    margin-top: 3em;
+    text-align: center;
+}
+#faq {
+    margin-top: 3em;
+    text-align: center;
+}
+.disclaimer {
+    padding-top: 2em;
+    font-size: 70%;
+    color: white;
+}
+.faq-answer {
+    font-size: 90%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+.extranote {
+    font-size: 90%;
+    color: white;
+}
