@@ -1,0 +1,383 @@
+<head>
+    <meta charset="utf-8">
+    <title>Investment Advisor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="advisor.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="advisor.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<style>
+  p{
+    font-family: Oxygen;
+    font-size: 18.3px;
+  }
+  h2{
+    font-family: Oxygen;
+    font-size: 25px;
+  }
+  th{
+    font-family: Oxygen;
+  }
+  td{
+    font-family: Oxygen;
+  }
+  h1{
+    font-family: Share;
+    font-size: 44px;
+  }
+  div{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3.5px;  
+  }
+  .btn {
+  width: 260px;
+  height: 45px;
+  font-family: Oxygen, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.btn:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+    #nav-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+    border-right: solid;
+    background: #84C978;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .nav-link{
+    text-decoration:none;
+    font-family: Share Tech Mono;
+    font-size: 25px;
+    text-align: center;
+  }
+  #navbar li {
+    height: 60%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }
+
+  #navbar a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #navbar ul {
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .navbar a:hover {
+    color: #1c87c9;
+  }
+
+  #advisor{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 18px;
+  top: 112px;
+  font-family: Share Tech Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #calc{
+  position: fixed;
+  width: 150px;
+  height: 45px;
+  left: 0px;
+  top: 181px;
+  font-size: 23px;
+  line-height: 32px;
+  color: #000000;             
+  background: #155E09; 
+  opacity: 0.5;
+  }
+
+  #loan{
+  position: fixed;
+  width: 125px;
+  height: 27px;
+  left: 10px;
+  top: 250px;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #budget{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 317px;
+  font-size: 29px;
+  line-height: 33px;
+  color: #000000;
+  }
+
+  #expenses{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 394px;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #invest{
+  position: absolute;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 476px;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000; 
+  }
+  #nav-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+    border-right: solid;
+    background: #84C978;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .nav-link{
+    text-decoration:none;
+    font-family: Share Tech Mono;
+    font-size: 25px;
+    text-align: center;
+  }
+  #navbar li {
+    height: 60%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+  }
+
+  #navbar a {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #navbar ul {
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .navbar a:hover {
+    color: #1c87c9;
+  }
+
+  #advisor{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 18px;
+  top: 112px;
+  font-family: Share Tech Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #calc{
+  position: fixed;
+  width: 150px;
+  height: 45px;
+  left: 0px;
+  top: 181px;
+  font-size: 23px;
+  line-height: 32px;
+  color: #000000;             
+  background: #155E09; 
+  opacity: 0.5;
+  }
+
+  #loan{
+  position: fixed;
+  width: 125px;
+  height: 27px;
+  left: 10px;
+  top: 250px;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #budget{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 317px;
+  font-size: 29px;
+  line-height: 33px;
+  color: #000000;
+  }
+
+  #expenses{
+  position: fixed;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 394px;
+  font-size: 29px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+  }
+
+  #invest{
+  position: absolute;
+  width: 125px;
+  height: 45px;
+  left: 10px;
+  top: 476px;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000; 
+  }
+  body{
+    position: fixed;
+    left:165px;
+  }
+</style>
+<div id = nav-bar>
+  <nav>
+    <ul>
+      <li><a class = "nav-link" id = "advisor" href = "advisor.html"> Advisor </a></li>
+      <li><a class = "nav-link" id = "calc" href = "../cost-of-time/cost-of-time.html"> Cost of Time </a></li>
+      <li><a class ="nav-link" id = "loan"> Loan </a></li>
+      <li><a class = "nav-link" id = "budget" href = "../budget-tracker/budget-tracker.html">Budget</a></li>
+      <li><a class = "nav-link" id = "expenses" href = "../expense-manager/expense-manager.html"> Expenses </a></li>
+      <li><a class = "nav-link" id = "invest" href = "../invest-feature/invest-calc.html"> Invest</a></li>
+    </ul>
+  </nav>
+</div>
+<title>Advisor</title>
+<body class="container text-center">
+  <!-- Introduction -->
+  <div class="jumbotron">
+    <h1>Portfolio Advisor</h1>
+    <p class="lead">Welcome to your portfolio advisor. Here you will be able receive personalized investing advice. You can also search up updated stock performance from NASDAQ. </p>
+    <hr class="my-4">
+  </div>
+  <!-- //Input Form -->
+  <div class="inputForm">
+    <h2>Insert your statistics below</h2>
+    <p>Please use numbers only:</p>
+
+   
+    <input type="text" placeholder="Money to invest" id="investMoney">
+
+    <input type="number" placeholder="Age, 15 minimum" id="age" min="15">
+
+    <a href="#intro" class="btn" onclick="getData()">Give Investment Advice!</a>
+       
+  </div>
+
+
+  <!-- Output Advice -->
+
+  <div class="outputAdvice">
+
+
+    <h2>Investment Advice</h2>
+    <p id="intro"></p>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Asset Class</th>
+      <th scope="col">Investment %</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Gold (EGLN)</th>
+      <td class="gcPercentage"></td>
+      <td class="gcAmount"></td>
+    </tr>
+    <tr>
+      <th scope="row">Commodities (SXRS)</th>
+      <td class="gcPercentage"></td>
+      <td class="gcAmount"></td>
+    </tr>
+    <tr>
+      <th scope="row">Government Bonds (DBZB)</th>
+      <td id="bondsPercentage"></td>
+      <td id="bondsAmount"></td>
+    </tr>
+    <tr>
+      <th scope="row">Stocks (VWRL)</th>
+      <td id="stocksPercentage"></td>
+      <td id="stocksAmount"></td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+
+</body>
