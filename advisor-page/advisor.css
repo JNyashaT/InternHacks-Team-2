@@ -1,0 +1,51 @@
+.jumbotron {
+    background-color: rgba(100, 164, 130, 1);
+    color: #fff;
+    margin-bottom: 2%;
+    padding: 5%;
+  }
+  
+  /* Input Form */
+  input:invalid {
+    border: 2px solid red;
+  }
+  
+  
+  .inputForm {
+    background-color: #bfee90;
+    color: #110934;
+    padding: 5%;
+  }
+  
+  #investMoney {
+    margin: 2%;
+  }
+  
+  #age {
+    margin: 2%;
+  }
+  
+  .btn {
+    background-color: rgba(64, 144, 51, 1);
+    color: #fff;
+    cursor: pointer;
+    margin: 2%;
+    font-family: Oxygen;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Output Advice */
+  
+  .outputAdvice {
+    background-color: rgba(100, 164, 130, 1);
+    ;
+    color: #fff;
+    margin-top: 2%;
+    padding: 5%;
+  }
+  
+  .table {
+    color: #fff;
+  }
+  

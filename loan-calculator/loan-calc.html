@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="./src/loan.css">
+</head>
+<style>
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    font-family: Share;
+  }
+    h2{
+    font-family: Oxygen;
+  }
+  #nav-bar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 100%;
+  overflow: hidden;
+  border-right: solid;
+  background: #84C978;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link{
+  text-decoration:none;
+  font-family: Share Tech Mono;
+  font-size: 25px;
+  text-align: center;
+}
+#navbar li {
+  height: 60%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 15px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#navbar ul {
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.navbar a:hover {
+  color: #ffff;
+}
+
+#advisor{
+position: absolute;
+width: 150px;
+height: 45px;
+top: 65px;
+left: 0px;
+line-height: 35px;
+}
+
+#calc{
+position: absolute;
+width: 152px;
+height: 45px;
+left: 0px;
+top: 150px;
+font-size: 28px;
+line-height: 32px;
+color: #000000;
+}
+
+#loan{
+position: absolute;
+width: 125px;
+height: 27px;
+top: 275px;
+left: 10px;
+font-size: 28px;
+line-height: 32px;
+color: #000000;
+background: #155E09;
+opacity: 0.5;
+}
+
+#budget{
+position: absolute;
+width: 125px;
+height: 45px;
+top: 375px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+left:10px;
+
+}
+
+#expenses{
+position: absolute;
+width: 125px;
+height: 45px;
+top: 475px;
+left: 0px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+}
+
+#invest{
+position: absolute;
+width: 125px;
+height: 45px;
+top: 575px;
+left: 10px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+} 
+body{
+  padding-left: 160px; 
+}
+</style>
+<div id = nav-bar>
+  <nav>
+    <ul>
+      <li><a class = "nav-link" id = "advisor" href = 
+        "../advisor-page/advisor.html"> Advisor </a></li>
+      <li><a class = "nav-link" id = "calc" href = "../cost-of-time/cost-of-time.html"> Cost of Time </a></li>
+      <li><a class ="nav-link" id = "loan" href = "loan-calc.html"> Loan </a></li>
+      <li><a class = "nav-link" id = "budget" href = "../budget-tracker/budget-tracker.html"> Budget </a></li>
+      <li><a class = "nav-link" id = "expenses" href="../expense-manager/expense-manager.html"> Expenses </a></li>
+      <li><a class = "nav-link" id = "invest" href="../invest-feature/invest-calc.html"> Invest</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<body>
+    <div class="content">
+        <div class="form-content">
+            <h1>Loan Calculator</h1>
+            <h5> A loan calculator that calculates total interest, total amount to be paid, and monthly payments.</h5>
+            <form id="loan-form" class="loan-form">
+                <label>Loan Amount</label>
+                <input type="number" id="amount" placeholder="$">
+
+                <label>Interest</label>
+                <input type="number" id="interest" placeholder="%">
+
+                <label>Number of Years</label>
+                <input type="number" id="years"placeholder="years">
+
+                <button type="submit">Calculate</button>
+            </form>
+        </div>
+
+        <h2>Calculated Results</h2>
+        <div class="results">
+            <div class="card-1">
+                <p id="monthlyPayment">$</p>
+                <p class="indicators">Monthly Payments</p>
+            </div>
+
+            <div class="card-2">
+                <p id="totalInterest">%</p>
+                <p class="indicators">Total Interest</p>
+
+            </div>
+
+            <div class="card-3">
+                <p id="totalPayment">$</p>
+                <p class="indicators">Total Amount to be Paid</p>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="./src/loan.js"></script>
+
+</html>

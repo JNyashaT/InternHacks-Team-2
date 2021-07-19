@@ -1,0 +1,255 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stock.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Invest</title>
+  </head>
+  <style>
+    #top{
+    position: fixed;
+    left:200px;
+    }
+    #bottom{
+    position: fixed;
+    left:200px;
+    top: 220px;
+    }
+    h1{
+      font-family: Share;
+      font-size: 44px;
+      text-align: center;
+    }
+    h2{
+    font-family: Oxygen;
+    font-size: 25px;
+    text-align: center;
+  }
+   h3{
+    font-family: Oxygen;
+    font-size: 28px;
+
+  }
+  p{
+    text-align: center;
+    font-family:Oxygen;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+#nav-bar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 100%;
+  overflow: hidden;
+  border-right: solid;
+  background: #84C978;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link{
+  text-decoration:none;
+  font-family: Share Tech Mono;
+  font-size: 25px;
+  text-align: center;
+}
+#navbar li {
+  height: 60%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 15px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#navbar ul {
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.navbar a:hover {
+  color: #ffff;
+}
+
+#advisor{
+position: absolute;
+width: 150px;
+height: 45px;
+top: 65px;
+left: 0px;
+line-height: 35px;
+}
+
+#calc{
+position: absolute;
+width: 152px;
+height: 45px;
+left: 0px;
+top: 150px;
+font-size: 28px;
+line-height: 32px;
+color: #000000;
+}
+
+#loan{
+position: absolute;
+width: 125px;
+height: 27px;
+top: 275px;
+left: 10px;
+font-size: 28px;
+line-height: 32px;
+color: #000000;
+}
+
+#budget{
+position: absolute;
+width: 125px;
+height: 45px;
+top: 375px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+left:10px;
+}
+
+#expenses{
+position: absolute;
+width: 125px;
+height: 45px;
+top: 475px;
+left: 0px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+}
+
+#invest{
+position: absolute;
+width: 150px;
+height: 45px;
+top: 575px;
+left: 0px;
+font-size: 29px;
+line-height: 33px;
+color: #000000;
+background: #155E09;
+opacity: 0.5;;
+} 
+  </style>
+  <div id = nav-bar>
+  <nav>
+    <ul>
+      <li><a class = "nav-link" id = "advisor" href = "../advisor-page/advisor.html">Advisor</a></li>
+      <li><a class = "nav-link" id = "calc" href = "../cost-of-time/cost-of-time.html"> Cost of Time </a></li>
+      <li><a class ="nav-link" id = "loan" href="../loan-calculator/loan-calc.html"> Loan </a></li>
+      <li><a class = "nav-link" id = "budget" href = "../budget-tracker/budget-tracker.html">Budget</a></li>
+      <li><a class = "nav-link" id = "expenses" href ="../expense-manager/expense-manager.html"> Expenses </a></li>
+      <li><a class = "nav-link" id = "invest" href = "invest-calc.html">Invest</a></li>
+    </ul>
+  </nav>
+</div>
+<title>Invest</title>
+  <body>
+      <div class="container" id = "top">
+    <h1>Investment Helper</h1>
+    <p class="lead">Welcome to your ivestment helper. Here you will be able to use an investment frequency calculator in order how and when to invest your money. </p>
+    <br>
+  </div>
+   <div class="container" id="bottom">
+      <br>
+      <h4> Investment Frequency Calculator</h4>
+     <form id="freqcalc" onSubmit="return false;">
+                <div class="form-group row">
+                    <label for="savefreq" class="col-6 col-form-label">Income frequency</label>
+                    <div class="col-6">
+                        <select class="form-control" id="savefreq">
+                            <option value="365">Daily</option>
+                            <option value="52">Weekly</option>
+                            <option value="26" selected>Fortnightly</option>
+                            <option value="12">Monthly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="2">Twice-yearly</option>
+                            <option value="1">Annually</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label id="savingsLabel" for="savings" class="col-6 col-form-label">Savings</label>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                            <input type="number" class="form-control" id="savings" value="100" min="1" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="interest" class="col-6 col-form-label" title="Compounded monthly">Interest rate on savings</label>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input type="number" step="0.01" class="form-control" id="interest" value="2" min="0" required>
+                            <div class="input-group-append"><span class="input-group-text">%</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="growth" class="col-6 col-form-label" title="Continous per annum growth">Expected investment returns</label>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input type="number" step="0.1" class="form-control" id="growth" value="9.0" min="0.1" required>
+                            <div class="input-group-append"><span class="input-group-text">%</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="brokerage" class="col-6 col-form-label" title="">Brokerage/commission per parcel</label>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                            <input type="number" step="0.01" class="form-control" id="brokerage" value="9.50" min="0.00" required>
+                        </div>
+                    </div>
+                </div>
+          
+            </form>
+
+            <div id="warning" class="alert alert-warning" role="alert" style="display: none"></div>
+
+            <div id="results">
+                <h3>Optimal investment schedule:</h3>
+                <p class="lead" id="result"></p>
+
+                <canvas id="chart" style="display: none"></canvas>
+
+                <p class="disclaimer text-justify">Results from this calculator should not be taken as any kind of investment advice. “Optimal” refers only to solving a particular mathematical problem based on constant rates of return and cannot predict or take into account the actual future movements in financial markets. Every individual situation is different and you should consult a qualified financial planner and/or tax accountant.</p>
+            </div>
+ </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <script src="investcalc.js"></script>
+</html>
